@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futupas CV</title>
+    <!-- This file will redirect to a proper language page -->
+    <!-- TODO: some lil styles -->
+</head>
+<body>
+    <div>
+        If you were not redirected to a CV in your language, please go to:
+        <ul>
+            <li><span>Probably your language: </span><a href id="proper-lang-link"></a></li>
+        </ul>
+    </div>
+
+    <script>
+        'use strict';
+
+        const MY_LANGUAGES = ['en', 'uk'];
+
+        function getBrowserLanguage() {
+            const browserLanguages = navigator.languages.map(x => x.split('-')[0]);
+            return browserLanguages.find(x => MY_LANGUAGES.includes(x));
+        }
+        function getLocalStorageLanguage() {
+            const localStorageLanguage = window.localStorage['lang'];
+            if (!localStorageLanguage || !MY_LANGUAGES.includes(localStorageLanguage)) return false;
+            return localStorageLanguage;
+        }
+
+        function getLanguage() {
+            return getLocalStorageLanguage() || getBrowserLanguage() || MY_LANGUAGES[0];
+        }
+
+        const language = getLanguage();
+
+        function generateLanguages() {
+            const properA = document.getElementById('proper-lang-link');
+            properA.href = '/' + language;
+            properA.innerText = '/' + language;
+
+            const ul = document.querySelector('ul');
+            MY_LANGUAGES.forEach(lang => {
+                const li = document.createElement('li');
+                const span = document.createElement('span');
+                const link = document.createElement('a');
+                span.innerText = lang.toUpperCase() + ' version: ';
+                link.href = '/' + lang;
+                link.innerText = '/' + lang;
+                li.appendChild(span);
+                li.appendChild(link);
+                ul.appendChild(li);
+            });
+        }
+        generateLanguages();
+
+        window.location.href = '/' + language;
+
+    </script>
+</body>
+</html>
