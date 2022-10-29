@@ -13,7 +13,7 @@
             height: 100vh;
             width: 100%;
             align-items: center;
-            text-align: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -28,7 +28,7 @@
     <script>
         'use strict';
 
-        const MY_LANGUAGES = ['en', 'uk'];
+        const MY_LANGUAGES = ['en', 'cs', 'uk', 'ru'];
 
         function getBrowserLanguage() {
             const browserLanguages = navigator.languages.map(x => x.split('-')[0]);
