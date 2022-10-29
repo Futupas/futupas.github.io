@@ -1,0 +1,18 @@
+:root{
+    --body-bg-color: #111111;
+    --text-color: white;
+}
+
+a {
+    color: #7979ff;
+}
+a:visited {
+    color: #b47ee7;
+}
+a:active {
+    color: #ff8585;
+}
+
+.langs a {
+    color: #7979ff !important;
+}

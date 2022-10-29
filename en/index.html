@@ -5,9 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="/assets/css/light.css" media="(prefers-color-scheme: light)" />
+    <link rel="stylesheet" href="/assets/css/dark.css" media="(prefers-color-scheme: dark)" />
+
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
+    <div id="body">
+        <div id="container">
+            <div id="photo">
+                <div></div>
+            </div>
+            <div id="text">
+                <div>
+                    <h2><?= $cnt_header ?></h2>
+                    <p><?= $cnt_first_paragraph ?></p>
+                    <p><?= $cnt_knowledge_and_experience_header ?></p>
+                    <ul>
+                        <?php foreach ($cnt_knowledge_and_experience_items as $value) { echo '<li>'.$value.'</li>'; } ?>
+                    </ul>
+                    <p><?= $cnt_jobs_and_portfolio_header ?></p>
+                    <ul>
+                        <?php foreach ($cnt_jobs_and_portfolio_items as $value) { echo '<li>'.$value.'</li>'; } ?>
+                    </ul>
+                    <p><?= $cnt_last_paragraph ?></p>
+                    <p class="contacts"><?= $cnt_contacts ?></p>
+                    <p class="langs">
+                        <a href="/?lang=cs">cs</a>
+                        <a href="/?lang=en">en</a>
+                        <a href="/?lang=ru">ru</a>
+                        <a href="/?lang=uk">uk</a>
+                    </p>
+                    <p class="langs">
+                        <a href="/pdf?lang=<?= $LANG ?>">PDF</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <script src="/lang.js"></script>
+    <script src="/assets/js/lang.js"></script>
+    <script src="/assets/js/view.js"></script>
 </body>
 </html>
