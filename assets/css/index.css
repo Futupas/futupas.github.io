@@ -170,3 +170,7 @@ a{
 .langs {
     text-align: center;
 }
+
+#small_photo_for_pdf {
+    display: none;
+}

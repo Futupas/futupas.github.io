@@ -1,0 +1,22 @@
+/* @media print {
+
+} */
+
+* {
+    position: static !important;
+    overflow: visible !important;
+    color: black !important;
+}
+
+#photo {
+    display: none;
+}
+
+#small_photo_for_pdf {
+    display: block;
+    width: 30%;
+}
+
+.hidden-in-pdf {
+    display: none !important;
+}
