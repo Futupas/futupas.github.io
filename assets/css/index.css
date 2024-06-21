@@ -138,6 +138,7 @@ a{
 }
 
 
+#text .with-top-margin,
 #text p {
     margin-top: .7rem;
 }
@@ -173,4 +174,10 @@ a{
 
 #small_photo_for_pdf {
     display: none;
+}
+
+@media not print {
+    .for-pdf-only {
+        display: none !important;
+    }
 }
