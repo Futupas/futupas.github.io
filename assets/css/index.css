@@ -138,6 +138,7 @@ a{
 }
 
 
+#text .with-top-margin,
 #text p {
     margin-top: .7rem;
 }
@@ -167,10 +168,17 @@ a{
     font-weight: 400;
 }
 
+.center,
 .langs {
     text-align: center;
 }
 
 #small_photo_for_pdf {
     display: none;
+}
+
+@media not print {
+    .for-pdf-only {
+        display: none !important;
+    }
 }

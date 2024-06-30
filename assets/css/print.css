@@ -17,6 +17,6 @@
     width: 30%;
 }
 
-.hidden-in-pdf {
+.for-web-only {
     display: none !important;
 }
