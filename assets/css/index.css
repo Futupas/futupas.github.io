@@ -35,7 +35,6 @@ a{
     text-decoration: none !important;
 }
 
-
 @media screen and (max-width: 1000px) {
     body {
         background: var(--body-bg-color);
@@ -83,9 +82,6 @@ a{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        perspective: 40vw;
-        transform-style: preserve-3d;
-        perspective-origin: center center;
         overflow: visible;
     }
     #container > div,
@@ -97,9 +93,9 @@ a{
         width: 50%;
         padding: 10px;
         text-align: justify;
-        transform-origin: center center;
-        transition: transform .5s ease;
-        transform: rotateY(0deg);
+        perspective: 40vw;
+        transform-style: preserve-3d;
+        perspective-origin: center center;
     }
     #photo{
         position: relative;
@@ -108,13 +104,26 @@ a{
         justify-content: space-around;
         transform-style: preserve-3d;
     }
-    #photo:hover{
+    #photo > div {
+        will-change: transform;
+        transform-origin: left center;
+        transition: transform .5s ease;
+        transform: rotateY(0deg);
+
+    }
+    #photo:hover > div {
         transform: rotateY(5deg);
     }
-    #text{
+    #text {
         overflow: auto;
     }
-    #text:hover{
+    #text > div{
+        will-change: transform;
+        transform-origin: right center;
+        transition: transform .5s ease;
+        transform: rotateY(0deg);
+    }
+    #text:hover > div {
         transform: rotateY(-5deg);
     }
 }
@@ -129,10 +138,10 @@ a{
     #photo{
         transform-origin: left center !important;
     }
-    #photo:hover{
+    #photo:hover > div {
         transform: rotateY(3deg);
     }
-    #text:hover{
+    #text:hover > div {
         transform: rotateY(-3deg);
     }
 }
